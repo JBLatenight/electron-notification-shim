@@ -1,6 +1,6 @@
 {
   "name": "electron-notification-shim",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Get Notification API events in Electron main-process. Perfect for adding Notification toasters in Windows with node-notifier or other solution.",
   "repository": {
     "type": "git",
@@ -11,6 +11,11 @@
     "email": "seriema@gmail.com",
     "url": "http://johansson.jp"
   },
+  "contributors": [
+    "Martin Sandström <maartiin_91@hotmail.com> (http://martinsandstrom.github.io)",
+    "Esbjörn Ekberg <oakninja@gmail.com> (http://oak.ninja/)",
+    "Alex Buznik <shu@buznik.net> (http://buznik.com/)"
+  ],
   "scripts": {
     "start": "electron test.js",
     "test": "xo"
@@ -33,12 +38,13 @@
   },
   "homepage": "https://github.com/seriema/electron-notification-shim#readme",
   "devDependencies": {
-    "electron-prebuilt": "^0.34.3",
-    "xo": "^0.10.1"
+    "electron-prebuilt": "^0.37.8",
+    "xo": "^0.15.0"
   },
   "xo": {
     "esnext": true,
     "rules": {
+      "linebreak-style": 0,
       "no-native-reassign": [
         2,
         {

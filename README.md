@@ -1,17 +1,18 @@
-# electron-notification-shim
+# electron-notification-shim [![Build Status](https://travis-ci.org/seriema/electron-notification-shim.svg?branch=master)](https://travis-ci.org/seriema/electron-notification-shim)
+
 > Get Notification API events in Electron main-process. Perfect for adding Notification toasters in Windows with node-notifier or other solution.
 
 ## Usage
 
-Include it in your renderering-view like this:
+Include it in your rendering-view like this:
 
     require('electron-notification-shim')();
 
 That's all. Now you'll receive `notification-shim` events in your main-process, like this:
 
-    ipc.on('notification-shim', (e, msg) => { ... });
+    ipcMain.on('notification-shim', (e, msg) => { ... });
 
-The `msg` is a simple object: `{ title, options }`, which matches the two parameters sent to [new Notification(title, options)](https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification). You can send an event back with [e.returnValue](http://electron.atom.io/docs/v0.34.0/api/ipc-main-process/#event-returnvalue) or [e.sender.send()](http://electron.atom.io/docs/v0.34.0/api/ipc-main-process/#event-sender-send-channel-arg1-arg2) if you want to react to it in the rendering view as well.
+The `msg` is a simple object: `{ title, options }`, which matches the two parameters sent to [new Notification(title, options)](https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification). You can send an event back with [e.returnValue](http://electron.atom.io/docs/v0.37.8/api/ipc-main/#eventreturnvalue) or [e.sender.send()](http://electron.atom.io/docs/v0.37.8/api/ipc-main/#eventsender) if you want to react to it in the rendering view as well.
 
 ### Example code
 
